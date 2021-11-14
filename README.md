@@ -82,3 +82,18 @@ To prepare the file for submition you can use the script :
 this will create a `{BOT}.tar.gz` file inside the `submits` folder.
 
 This file is ready to be submitted to the challenge on your [Lux AI Kaggle](https://www.kaggle.com/c/lux-ai-2021/submit) submit page.
+
+
+## Troubleshooting
+
+In case you get the following message running ```sh ./run.sh BOT BOT```:
+```sh
+bash: ./run.sh /bin/bash^M: bad interpreter: No such file or directory
+```
+
+You need to purge the spaces each OS uses for compiling the .sh. Therefore execute:
+```sh
+sed -i -e 's/\r$//' run.sh
+```
+
+And it should be fixed
